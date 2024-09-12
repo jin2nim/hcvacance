@@ -1,0 +1,13 @@
+<query id="getDocumentCategoryExtendList" action="select">
+    <tables>
+        <table name="document_categories" />
+    </tables>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" filter="number" notnull="notnull" />
+        <condition operation="equal" column="parent_srl" var="parent_srl" filter="number" pipe="and" />
+        <condition operation="like" column="title" var="title" pipe="and" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="list_order" order="order_type" />
+    </navigation>
+</query>

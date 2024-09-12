@@ -1,0 +1,443 @@
+* {margin: 0; padding: 0;}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #010206;
+}
+li {list-style: none;}
+a {text-decoration: none; color: #000;}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 997;
+    /* background-color: rgba(0, 0, 0, 0.8) */
+}
+
+
+.h-bg {
+    display: none;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 995;
+}
+
+.logo {
+    width: 24%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-46%);
+    left: 16%;
+}
+
+.logo img {
+    width: 100%;
+}
+
+header>img {
+    display: none;
+}
+
+nav {
+    width: 35%;
+    position: absolute;
+    right: 16%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav>img {
+    display: none;
+}
+
+.nav-bg {
+    display: none;
+}
+
+.m-menu {
+    display: none;
+}
+.menu {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.menu>img {
+    display: none;
+}
+
+.menu>li {
+    float: left;
+    margin-right: 10%;
+}
+
+.menu>li>a>img {
+    width: 25%;
+}
+
+.menu>li:nth-child(1)>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1%;
+}
+
+.menu>li:nth-child(2)>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18%;
+}
+
+.menu>li:nth-child(3)>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 38%;
+}
+
+.menu>li:nth-child(4)>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 58%;
+}
+
+.menu>li:nth-child(5)>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.menu>li>a>img:nth-child(2) {
+    opacity: 0;
+}
+
+.menu>li:last-child {
+    margin-right: 0;
+}
+
+.menu>li:hover img:nth-child(1) {
+    opacity: 0;
+}
+
+.menu>li:hover img:nth-child(2) {
+    opacity: 1;
+}
+
+.menu>li:nth-child(2)>a>img:nth-child(1) {
+    opacity: 0;
+}
+
+.menu>li:nth-child(2)>a>img:nth-child(2) {
+    opacity: 1;
+}
+
+.close-area {
+    display: none;
+}
+
+
+/* top-area */
+
+.top-area {
+    position: relative;
+    width: 100%;
+}
+
+.top-area>img {
+    position: relative;
+    width: 100%;
+}
+
+.top-area>img:nth-child(2) {
+    display: none;
+} 
+
+
+/* main-area */
+.main-area {
+    width: 100%;
+    position: relative;
+}
+
+.main-area>img {
+    width: 100%;
+    position: relative;
+}
+
+/* video-area */
+.video-area {
+    position: absolute;
+    width: 57.3%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 비와이 영상 영역 */
+
+.BY {
+    position: absolute;
+    width: 42%;
+    right: 0;
+    height: 2.95%;
+    top: 9.55%;
+}
+
+.BY>iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 아스터*히스*네오 영상 영역 원래 */
+
+
+.aster, .sura {
+    position: absolute;
+    width: 100%;
+    height: 2.3%;
+}
+
+.aster {
+    top: 25.5%;
+}
+
+.aster>iframe, .sura>iframe {
+    position: absolute;
+    width: 32.4%;
+    height: 100%;
+}
+
+/*
+.aster>iframe:nth-child(1) .sura>iframe:nth-child(1) {
+    left: 0;
+}
+
+.aster>iframe:nth-child(2), .sura>iframe:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.aster>iframe:nth-child(3), .sura>iframe:nth-child(3) {
+    right: 0;
+}
+*/
+
+.aster>a, .sura>a {
+    position: absolute;
+    width: 32.4%;
+    height: 100%;
+}
+
+.aster>a:nth-child(1), .sura>a:nth-child(1){
+    left: 0;
+}
+
+.aster>a:nth-child(2), .sura>a:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.aster>iframe, .sura>a:nth-child(3) {
+    right: 0;
+}
+
+.aster>a>img, .sura>a>img {
+    width: 100%;
+}
+
+
+/* 수라 영상 영역 */
+.sura {
+    top: 39.65%;
+}
+
+/* 앵쩡 영상 영역 */
+.fisher {
+    position: absolute;
+    width: 44.54%;
+    height: 3.14%;
+    right: 0;
+    top: 45.3%;
+}
+
+.fisher>iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 황아영 영상 영역 */
+.hwang {
+    position: absolute;
+    width: 44.54%;
+    height: 6.9%;
+    right: 0;
+    top: 53.68%;
+}
+
+.hwang>iframe {
+    width: 100%;
+    height: 48%;
+}
+
+.hwang>iframe:nth-child(1) {
+    top: 0;
+}
+.hwang>iframe:nth-child(2) {
+    bottom: 0;
+}
+
+/* 프레&오세진&캠핑쥐 영상 영역 */
+.prae, .ohs, .c-mouse {
+    position: absolute;
+    width: 44.54%;
+    height: 3.14%;
+    right: 0;
+}
+
+.prae>iframe, .ohs>iframe, .c-mouse>iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.prae {
+    top: 63.2%;
+}
+
+.ohs {
+    top: 71.6%;
+}
+
+.ohs>a, .ohs>a>img {
+    width: 100%;
+    height: 100%;
+}
+
+.c-mouse {
+    top: 80.08%;
+}
+
+/* 엑스걸프랜즈 */
+.model {
+    position: absolute;
+    width: 44.54%;
+    height: 6.9%;
+    right: 0;
+    top: 88.4%;
+}
+
+.model>iframe {
+    width: 100%;
+    height: 48%;
+}
+
+.model>iframe:nth-child(1) {
+    top: 0;
+}
+.model>iframe:nth-child(2) {
+    bottom: 0;
+}
+
+.m-main-area {
+    display: none;
+}
+
+/* top-btn-area */
+.top-btn-area {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 4%;
+    display: none;
+}
+
+.top-btn-area>img {
+    width: 100%;
+}
+
+/* footer */
+
+footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+footer>img {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+footer>img:nth-child(2) {
+    display: none;
+}
+
+.logo-area {
+    position: absolute;
+    width: 47%;
+    height: 9%;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: yellow; */
+}   
+
+.logo-area>a>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+}
+
+.logo-area>a:nth-child(1)>img {
+    left: 0;
+}
+.logo-area>a:nth-child(2)>img {
+    left: 26.5%;
+}
+.logo-area>a:nth-child(3)>img {
+    height: 90%;
+    left: 47%;
+}
+.logo-area>a:nth-child(4)>img {
+    height: 110%;
+    right: 0;
+}
+
+.call {
+    position: absolute;
+    width: 7.5%;
+    height: 4%;
+    top: 61%;
+    left: 37.5%;
+    /* background-color: yellow; */
+}
+
+.call>a {
+    width: 100%;
+    height: 100%;
+}
+
+.call>a>img {
+    width: 100%;
+    opacity: 0;
+}

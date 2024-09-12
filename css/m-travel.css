@@ -1,0 +1,250 @@
+@media screen and (max-width:800px) {
+    /* header */
+
+    header {
+        width: 100%;
+        height: auto;
+        position: fixed;
+    }
+
+    .h-bg {
+        display: block;
+        width: 100%;
+        height: 10vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 995;
+        display: none;
+    }
+
+    .logo {
+        width: 50%;
+        top: 3vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header>img {
+        display: block;
+        width: 10%;
+        position: absolute;
+        top: 4%;
+        right: 2%;
+        position: fixed !important;
+    }
+
+    .m-menu-btn {
+        position: fixed;
+        cursor: pointer;
+        top: 3vh;
+    }
+
+    nav {
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0 !important;
+        transform: none !important;
+        right: 0;
+        z-index: 999;
+        display: none;
+    }
+
+    nav>img {
+        display: block;
+        width: 80%;
+        position: absolute;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    
+    .nav-bg {
+        display: block;
+        width: 50%;
+        height: 100vh;
+        background-color: yellow;
+    }
+
+    .menu li {
+        float: none;
+    }
+
+
+    .menu>li>a>img {
+        width: 75%;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    
+    .menu>li:nth-child(1)>a>img {
+        top: 25vh;
+    }
+
+    .menu>li:nth-child(2)>a>img {
+        top: 36vh;
+    }
+
+    .menu>li:nth-child(3)>a>img {
+        top: 47vh;
+    }
+
+    .menu>li:nth-child(4)>a>img {
+        top: 58vh;
+    }
+
+    .menu>li:nth-child(5)>a>img {
+        top: 69vh;
+    }
+
+    /* close-btn */
+    .close-area {
+        display: block;
+        position: fixed;
+        bottom: 4%;
+        right: 35%;
+        width: 5%;
+        height: auto;
+        
+        z-index: 999;
+        display: none;
+        cursor: pointer;
+    }
+
+
+    .close-area>img {
+        width: 100%;
+    }
+
+
+    /* top-area */
+    .top-area>img:nth-child(1) {
+        display: none;
+    }
+
+    .top-area>img:nth-child(2) {
+        display: block;
+    }
+
+    .top-area>a {
+        width: 80% !important;
+        top: 65%;
+    }
+
+    /* travel-area */
+    .travel-area>img:nth-child(1) {
+        display: none;
+    }
+
+    .travel-area>img:nth-child(2) {
+        display: block;
+    }
+
+    .btn-area>a {
+        position: absolute;
+        width: 42%;
+    }
+
+    .btn-area>a>img {
+        width: 100%;
+    }
+
+    .btn-area>a:nth-child(1) {
+        top: 35%;
+        left: 46%;
+    }
+    
+    .btn-area>a:nth-child(2) {
+        top: 62%;
+        left: 3%;
+    }
+    
+    .btn-area>a:nth-child(3) {
+        top: 89%;
+        left: 46%;
+    }
+
+    /* room-area */
+
+    .room-area>img:nth-child(1) {
+        display: none;
+    }
+    .room-area>img:nth-child(2) {
+        display: block;
+    }
+
+    .btn-area2>a {
+        position: absolute;
+        width: 30%;
+    }
+
+    .btn-area2>a>img {
+        width: 100%;
+    }
+
+    .btn-area2>a:nth-child(1) {
+        top: 48%;
+        left: -1%;
+    }
+    .btn-area2>a:nth-child(2) {
+        top: 48%;
+        left: 29.8%;
+    }
+    .btn-area2>a:nth-child(3) {
+        top: 48%;
+        left: 60.5%;
+    }
+    .btn-area2>a:nth-child(4) {
+        top: 75%;
+        left: -1%;
+    }
+    .btn-area2>a:nth-child(5) {
+        top: 75%;
+        left: 29.8%;
+    }
+    .btn-area2>a:nth-child(6) {
+        top: 75%;
+        left: 60.5%;
+    }
+
+     /* top-btn-area */
+     .top-btn-area {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        width: 10%;
+    }
+
+    .top-btn-area>img {
+        width: 100%;
+    }
+
+    /* footer */
+    
+    footer>img:nth-child(1) {
+        display: none;
+    }
+
+    footer>img:nth-child(2) {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    .logo-area {
+        width: 55%;
+        height: 10%;
+        bottom: 5%;
+        z-index: 999;
+    }
+    
+    .call {
+        width: 8%;
+        top: 64%;
+        left: 35.5%;
+    }
+
+}

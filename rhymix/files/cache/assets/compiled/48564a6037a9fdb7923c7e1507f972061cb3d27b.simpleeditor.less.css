@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.rx_simpleeditor {
+  width: 100%;
+  min-height: 60px;
+  box-sizing: border-box;
+  outline: 0 solid transparent;
+  resize: vertical;
+  overflow-y: auto;
+}
+.rx_simpleeditor.light {
+  border: 1px solid #c4c4c4;
+  background: #fff;
+  padding: 10px;
+}
+.rx_simpleeditor.dark,
+.color_scheme_dark .rx_simpleeditor {
+  border-color: #111;
+  background: #333;
+  color: #fff;
+}
+.rx_simpleeditor iframe {
+  max-width: 100%;
+  padding: 5px 0;
+}
+.rx_simpleeditor img {
+  max-width: 50%;
+  padding: 5px 0;
+}
+.rx_simpleeditor img.thumbnail {
+  max-width: 160px;
+}
+

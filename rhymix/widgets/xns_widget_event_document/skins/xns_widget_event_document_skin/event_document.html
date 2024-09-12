@@ -1,0 +1,213 @@
+{@ $skin_path = str_replace(_XE_PATH_,'',$tpl_path)}
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<!--//스킨 CSS,JS 인클루드-->
+<load target="./css/widget.css" />
+
+
+<div id="result_msg" cond="$xns_ajax=='y'"></div>
+
+
+<div class="xns_widget_event_document_skin" cond="$xns_ajax!='y'">
+  <form action="./" method="post" id="form_insert_event" class="form_insert_event" no-error-return-url="true">
+    <input type="hidden" name="vid" value="{$vid}" disabled|cond="!$vid" />
+    <input type="hidden" name="act" value="{$act}" disabled|cond="!$act" />
+    <input type="hidden" name="mid" value="{$mid}" />
+    <input type="hidden" name="page" value="" />
+    <input type="hidden" name="xns_ajax" value="y" />
+    <input type="hidden" name="query_type" value="insert" />
+
+    <div class="input_field">
+      <table border="0" cellspacing="0">
+        <tr>
+          <th class="name">이름</th>
+          <td class="name-text">
+            <input type="text" name="user_name" value="" id="input_user_name" placeholder="이름" required />
+          </td>
+        </tr>
+        <tr>
+          <th class="phone">연락처</th>
+          <td class="phone-text">
+            <input type="number" name="phone_number" value="" id="input_phone_number" placeholder="01012345678" min="0" required />
+          </td>
+        </tr>
+        <tr>
+          <th class="context-area">"너의<br/>합천 여행<br/>계획을<br/>알려줘"</th>
+          <td class="context-text">
+            <textarea name="event_content" placeholder="500자 이상 정성스러운 합천 여행 계획을 알려주세요. 정성스럽게 글을 작성해 주실수록 당첨 확률이 높아집니다!" required></textarea>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <button>등록</button>
+  </form>
+
+  <ul class="docu_list" id="docu_list">
+    <!--@foreach($docu_list as $key => $val)-->
+      {@ $item_document = $oDocumentModel->getDocument($val->document_srl)}
+      <li>
+        <div class="user_name">
+          {@ $user_name = substr($item_document->get('user_name'),0,3)}
+          {$user_name}○○
+          <span class="date">
+            {$item_document->getRegdate('Y.m.d H:i:s')}
+          </span>
+        </div>
+        <div class="content">
+          {nl2br($item_document->getContent(false))}
+        </div>
+      </li>
+    <!--@end-->
+  </ul>
+
+
+  <div class="pagination" id="more_pagination">
+    <a href="#" onclick="ajaxAddDocumentList('#docu_list','#more_pagination','{$page+1}'); return false;" cond="$page<$total_page">더보기</a>
+  </div>
+	<!--div class="pagination">
+		<a href="{getUrl('page','')}" class="direction prev"><i class="fas fa-chevron-left"></i></a> 
+		<block loop="$page_no=$page_navigation->getNextPage()">
+			<strong cond="$page==$page_no">{$page_no}</strong>
+			<a cond="$page!=$page_no" href="{getUrl('page',$page_no,'document_srl')}">{$page_no}</a>
+		</block>
+		<a href="{getUrl('page',$page_navigation->last_page,'document_srl','')}" class="direction next"><i class="fas fa-chevron-right"></i></a>
+	</div-->
+</div>
+
+<div class="top-btn">
+  <img src="top-btn.png" alt="top">
+</div>
+
+<script>
+  $(function(){
+      $('.top-btn').click(function(){
+          $('html,body').animate({
+              scrollTop:0
+          }, 'slow');
+      });
+  });
+</script>
+
+<script>
+//오행시 목록추가 함수
+function ajaxAddDocumentList(list_selector,page_selector,page){
+  var ajax_data = current_url;
+  ajax_data = ajax_data.replace(default_url,'');
+  ajax_data = ajax_data.replace('?','');
+  ajax_data = ajax_data + '&page='+page;
+  //아작스 실행
+  var url = "./";
+  jQuery.ajax({
+    type: 'get',
+    url: url,
+    data: ajax_data,
+    success: function (data) {
+      var response = jQuery(data);
+
+      //목록추가 설정
+      if(response.filter(list_selector).html()){
+        var list_result_msg_html = response.filter(list_selector).html();
+      } else if(response.find(list_selector).html()){
+        var list_result_msg_html = response.find(list_selector).html();
+      }
+      if(list_result_msg_html){
+        jQuery(list_selector).append(list_result_msg_html);
+      }
+
+      //더보기버튼 설정
+      jQuery(page_selector).hide();
+      if(response.filter(page_selector).html()){
+        var page_result_msg_html = response.filter(page_selector).html();
+      } else if(response.find(page_selector).html()){
+        var page_result_msg_html = response.find(page_selector).html();
+      }
+      if(page_result_msg_html){
+        jQuery(page_selector).html(page_result_msg_html);
+        jQuery(page_selector).show();
+      }
+
+      return false;
+    },
+    error: function (request, status, error) {
+      console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+      return false;
+    }
+  });
+
+}
+
+
+//댓글 전송 코드
+jQuery('#form_insert_event').submit(function(){
+  var ajax_data = jQuery(this).serialize();
+  //아작스 실행
+  var url = "./";
+  jQuery.ajax({
+    type: 'post',
+    url: url,
+    data: ajax_data,
+    success: function (data) {
+      var response = jQuery(data);
+      //정렬영역 설정
+      if(response.filter('#result_msg').html()){
+        var result_msg_html = response.filter('#result_msg').html();
+      } else if(response.find('#result_msg').html()){
+        var result_msg_html = response.find('#result_msg').html();
+      }
+      if(result_msg_html){
+        alert(result_msg_html);
+      } else {
+        location.reload();
+      }
+      return false;
+    },
+    error: function (request, status, error) {
+      console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+      return false;
+    }
+  });
+  return false;
+});
+
+
+
+//분류확장 업데이트
+function insertRealestateCategoryExtend(form_selector){
+  var params = {}; //오브젝트형 배열
+  var form_data = jQuery(form_selector).serialize();
+  form_data = form_data.split('&');
+  for (var i in form_data){
+    var param_item = form_data[i];
+    param_item = param_item.split('=');
+    params[param_item[0]] = param_item[1];
+  }
+  exec_json('realestatexn.procRealestatexnAdminCategoryExtendInsert', params, function(ret_obj){
+      var error = ret_obj.error;
+      var message = ret_obj.message;
+      if(message=='success'){
+        location.reload();
+      }
+  });
+}
+
+
+//분류확장 업데이트
+function updateRealestateCategoryExtend(form_selector){
+  var params = {}; //오브젝트형 배열
+  var form_data = jQuery(form_selector).serialize();
+  form_data = form_data.split('&');
+  for (var i in form_data){
+    var param_item = form_data[i];
+    param_item = param_item.split('=');
+    params[param_item[0]] = param_item[1];
+  }
+  exec_json('realestatexn.procRealestatexnAdminCategoryExtendUpdate', params, function(ret_obj){
+      var error = ret_obj.error;
+      var message = ret_obj.message;
+      if(message=='success'){
+        location.reload();
+      }
+  });
+}
+</script>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">XNS 게시판 이벤트 리뷰글 등록/출력 위젯 스킨</title>
+    <version>1.0</version>
+    <date>2021-08</date>
+
+    <author email_address="xnssolution@gmail.com" link="https://xenara.zaggu.net">
+        <name xml:lang="ko">XNS</name>
+    </author>
+
+    <colorset>
+        <color name="default">
+            <title xml:lang="ko">기본</title>
+        </color>
+    </colorset>
+</skin>

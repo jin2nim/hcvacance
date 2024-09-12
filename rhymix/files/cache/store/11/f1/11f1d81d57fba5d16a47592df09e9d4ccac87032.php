@@ -1,0 +1,2 @@
+<?php /* 2.0.14:site_and_module#36:module_part_config:comment_115 */
+return unserialize('a:2:{i:0;i:1630375974;i:1;O:8:"stdClass":7:{s:13:"comment_count";i:50;s:18:"comment_page_count";i:10;s:12:"default_page";s:4:"last";s:11:"use_vote_up";s:1:"N";s:13:"use_vote_down";s:1:"N";s:16:"declared_message";a:0:{}s:22:"use_comment_validation";s:1:"N";}}');

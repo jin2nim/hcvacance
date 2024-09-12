@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">XNS 게시판 이벤트 리뷰글 등록/출력 위젯</title>
+    <description xml:lang="ko">XNS 게시판 이벤트 리뷰글 등록/출력 위젯입니다.</description>
+    <version>1.0</version>
+    <date>2021-08</date>
+
+    <author email_address="xnssolution@gmail.com" link="https://xenara.zaggu.net">
+        <name xml:lang="ko">XNS</name>
+    </author>
+
+    <extra_vars>
+        <group>
+            <title xml:lang="ko">기본설정</title>
+            <var id="module_srl" type="mid">
+                <name xml:lang="ko">게시판 선택</name>
+                <description xml:lang="ko">
+                  게시판을 선택하세요. 선택한 게시판에 적용합니다.
+                </description>
+            </var>
+        </group>
+
+        <group>
+            <title xml:lang="ko">목록설정</title>
+            <var id="list_count" type="text">
+                <name xml:lang="ko">목록수</name>
+                <description xml:lang="ko">목록수를 입력하세요. (기본 : 10)</description>
+            </var>
+            <var id="page_count" type="text">
+                <name xml:lang="ko">페이지수</name>
+                <description xml:lang="ko">페이지수를 입력하세요. (기본 : 5)</description>
+            </var>
+            <var id="sort_index" type="select">
+                <name xml:lang="ko">정렬 대상</name>
+                <description xml:lang="ko">등록된 순서 또는 변경된 순서로 정렬을 할 수 있습니다.</description>
+                <options>
+                    <value>regdate</value>
+                    <name xml:lang="ko">등록일순</name>
+                </options>
+                <options>
+                    <value>last_update</value>
+                    <name xml:lang="ko">수정일순</name>
+                </options>
+            </var>
+            <var id="order_type" type="select">
+                <name xml:lang="ko">정렬 방법</name>
+                <description xml:lang="ko">정렬 방법을 선택하세요.</description>
+                <options>
+                    <value>desc</value>
+                    <name xml:lang="ko">내림차순</name>
+                </options>
+                <options>
+                    <value>asc</value>
+                    <name xml:lang="ko">올림차순</name>
+                </options>
+            </var>
+        </group>
+    </extra_vars>
+</widget>
